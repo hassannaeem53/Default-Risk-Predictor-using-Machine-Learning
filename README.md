@@ -1,6 +1,16 @@
 # Credit-Risk-Modeling-Bandora
 In this project we will be doing credit risk modelling of peer to peer lending Bondora systems.Data for the study has been retrieved from a publicly available data set of a leading European P2P lending platform (Bondora)..In P2P lending, loans are typically uncollateralized and lenders seek higher returns as a compensation for the financial risk they take. In addition, they need to make decisions under information asymmetry that works in favor of the borrowers. In order to make rational decisions, lenders want to minimize the risk of default of each lending decision, and realize the return that compensates for the risk. In this project we will preprocess the raw dataset and will create new preprocessed csv that can be used for building credit risk models.
 
+## Table on Contents
+- <a href='#understanding-the-dataset'>Understanding the Dataset</a>
+- <a href='#preprocessing'>Preprocessing</a>
+- <a href='#eda'>Exploratory Data Analysis</a>
+- <a href='#feature-engineering'>Feature Engineering</a>
+- <a href='#feature-scaling'>Feature Scaling</a>
+- <a href='#spiliting-data-into-training-and-testing-sets'>Data Splitting</a>
+- <a href='#model-building'>Model Building</a>
+- <a href='#deployment'>Deployment</a>
+
 
 ## Understanding the Dataset
 The retrieved data is a pool of both defaulted and non-defaulted loans from the time period between 1st March 2009 and 27th January 2020. The data comprises of demographic and financial information of borrowers, and loan transactions
@@ -60,16 +70,16 @@ Exploratory Data Analysis Process for this Projects involves plotting of the fol
 ### Numerical Features
 
 - Age distribution of the Defaulters
--- Mean Age = Median Age which is about 40 years
--- The data is almost Symmetric.
+   - Mean Age = Median Age which is about 40 years
+   - The data is almost Symmetric.
 - Monthly Payment distribution of the Defaulters
--- Mean value is 130, it's smaller and mean that the monthly payments of the Defaulters are smaller.
--- There are a large number of Outliers above the upper limit.
+   - Mean value is 130, it's smaller and mean that the monthly payments of the Defaulters are smaller.
+   - There are a large number of Outliers above the upper limit.
 - AppliedAmount & Amount distribution of the Defaulters
 - Previous Repayments Before Loan distribution of the Defaulters
--- Mean value of the repaid money by the defaulters before the loan is 861.138387
--- Data very skewed to the right and this means that the defaulters repaid small amount of money with a mean value about 861
--- There are alot of Ouliers.
+   - Mean value of the repaid money by the defaulters before the loan is 861.138387
+   - Data very skewed to the right and this means that the defaulters repaid small amount of money with a mean value about 861
+   - There are alot of Ouliers.
 
 ### Correlation Plot of Numerical Variables
 After Identifying outliers features, Heatmap is used to check the corelation of the features with the Target variable.
@@ -89,6 +99,7 @@ In EDA process outlier were already identified. There are different methods of d
 - Using Box plots
 - Using Z-score
 - Using the interquartile range (IQR)
+
 ```
 # Loop for replacing outliers above upper bound with the upper bound value:
 for column in df.select_dtypes([float, int]).columns :
@@ -97,6 +108,7 @@ for column in df.select_dtypes([float, int]).columns :
     col_Max =  df[column].quantile(.75) + (1.5*col_IQR)
     df[column][df[column] > col_Max] =  col_Max
 ```
+
 ```
 # Loop for replacing outliers under lower bound with the lower bound value:
 for column in df.select_dtypes([float, int]).columns :

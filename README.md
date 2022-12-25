@@ -206,6 +206,10 @@ Following Features were choosen for the deployment phase as they were observed t
 
 ## Deployment
 you can access our app by following this link [stock-price-application-streamlit](https://stock-price-2.herokuapp.com/) or by click [stock-price-application-flask](https://stock-price-flask.herokuapp.com/)
+
+### Application GUI
+![image](https://user-images.githubusercontent.com/80200407/209480606-53f3603a-7735-40b4-92fa-f29baf7d9950.png)
+
 ### Streamlit
 - It is a tool that lets you creating applications for your machine learning model by using simple python code.
 - We write a python code for our app using Streamlit; the app asks the user to enter the following data (**news data**, **Open**, **Close**).

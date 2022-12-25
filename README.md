@@ -22,6 +22,8 @@ The retrieved data is a pool of both defaulted and non-defaulted loans from the 
 - The Target label of the dataset is whether the client is **defaulted** (labeled as **1**) or **Not Defaulted**
 (labeled as **0**) in his period.
 
+The Used Dataset can be access from the following <a href="https://drive.google.com/u/0/uc?id=13_5F94nBgRLamAvkFRQg8pyfjcn1uPE4&export=download"> Link </a>
+
 
 ## Preprocessing 
 ### **Percentage of Missing Values**

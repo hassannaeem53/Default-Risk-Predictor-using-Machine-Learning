@@ -10,6 +10,7 @@ In this project we will be doing credit risk modelling of peer to peer lending B
 - <a href='#spiliting-data-into-training-and-testing-sets'>Data Splitting</a>
 - <a href='#model-building'>Model Building</a>
 - <a href='#deployment'>Deployment</a>
+- <a href='#team'>Team</a>
 
 
 ## Understanding the Dataset
@@ -22,7 +23,7 @@ The retrieved data is a pool of both defaulted and non-defaulted loans from the 
 - The Target label of the dataset is whether the client is **defaulted** (labeled as **1**) or **Not Defaulted**
 (labeled as **0**) in his period.
 
-The Used Dataset can be access from the following <a href="https://drive.google.com/u/0/uc?id=13_5F94nBgRLamAvkFRQg8pyfjcn1uPE4&export=download"> Link </a>
+Dataset can be found: <a href="https://drive.google.com/u/0/uc?id=13_5F94nBgRLamAvkFRQg8pyfjcn1uPE4&export=download"> Here </a>
 
 
 ## Preprocessing 
@@ -68,7 +69,18 @@ Exploratory Data Analysis Process for this Projects involves plotting of the fol
 - Distribution of Occupation Area of the Defaulters
 - Distribution of Home Ownership Type of the Defaulters
 - Distribution of Ratings of the Defaulters
-- Distribution of Credit Score EsMicroL of the Defaulters 
+- Distribution of Credit Score EsMicroL of the Defaulters
+
+Following are some of the above Graphical Distributions
+
+<img src="https://user-images.githubusercontent.com/80200407/210097031-53bf9979-809c-4f16-98bf-99d7eeebf13b.png" alt="image" title="My image" style="height:30%;width:50%">
+<img src="https://user-images.githubusercontent.com/80200407/210097059-c796fc9a-62a3-4621-9739-6dcf33b3418f.png" alt="image" title="My image2" style="height:50%;width:50%">
+<img src="https://user-images.githubusercontent.com/80200407/210097696-9b85fad1-ac30-4ca5-b22a-7fb0ec7820fa.png" alt="image" title="My image2" style="height:50%;width:50%">
+
+
+
+
+
 ### Numerical Features
 
 - Age distribution of the Defaulters
@@ -82,6 +94,14 @@ Exploratory Data Analysis Process for this Projects involves plotting of the fol
    - Mean value of the repaid money by the defaulters before the loan is 861.138387
    - Data very skewed to the right and this means that the defaulters repaid small amount of money with a mean value about 861
    - There are alot of Ouliers.
+   
+   #### Before Handling Outliers of Major Features 
+   ![image](https://user-images.githubusercontent.com/80200407/210096384-17f0adac-ea60-4b68-b235-8ebfa2424018.png)
+   #### After Handling Outliers of Major Features
+   ![image](https://user-images.githubusercontent.com/80200407/210096574-f0289ff2-3b2d-436f-8f12-62512f196cbe.png)
+   
+   For more details regarding handling outliers <a href='#handling-outliers'>Click Here</a>
+
 
 ### Correlation Plot of Numerical Variables
 After Identifying outliers features, Heatmap is used to check the corelation of the features with the Target variable.
@@ -173,12 +193,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, train
 - **Bagging and Boosting**: In this method of merging the same type of predictions. Boosting is a method of merging different types of predictions. Bagging decreases variance, not bias, and solves over-fitting issues in a model. Boosting decreases bias, not variance.
 - **Feature Randomness**:  In a normal decision tree, when it is time to split a node, we consider every possible feature and pick the one that produces the most separation between the observations in the left node vs. those in the right node. In contrast, each tree in a random forest can pick only from a random subset of features. This forces even more variation amongst the trees in the model and ultimately results in lower correlation across trees and more diversification.
 
-#### Linear Discriminant Analysis
-- Linear Discriminant Analysis, or LDA, uses the information from both(selection and target) features to create a new axis and projects the data on to the new axis in such a way as to **minimizes the variance and maximizes the distance between the means of the two classes.**
-- Both LDA and PCA are linear transformation techniques: LDA is supervised whereas PCA is unsupervised – PCA ignores class labels. LDA chooses axes to maximize the distance between points in different categories.
-- PCA performs better in cases where the number of samples per class is less. Whereas LDA works better with large dataset having multiple classes; class separability is an important factor while reducing dimensionality.
-- Linear Discriminant Analysis fails when the covariances of the X variables are a function of the value of Y.
-
 
 ### Choosing the features
 After choosing LDA model based on confusion matrix here where **choose the features** taking in consideration the deployment phase.
@@ -200,34 +214,36 @@ Following Features were choosen for the deployment phase as they were observed t
 
 
 
-
-
-
-
-
-
 ## Deployment
-you can access our app by following this link [stock-price-application-streamlit](https://stock-price-2.herokuapp.com/) or by click [stock-price-application-flask](https://stock-price-flask.herokuapp.com/)
+you can access our app by following this link [Risk Analysis](https://www.heroku.com/)
 
 ### Application GUI
 ![image](https://user-images.githubusercontent.com/80200407/209480606-53f3603a-7735-40b4-92fa-f29baf7d9950.png)
 
-### Streamlit
-- It is a tool that lets you creating applications for your machine learning model by using simple python code.
-- We write a python code for our app using Streamlit; the app asks the user to enter the following data (**news data**, **Open**, **Close**).
-- The output of our app will be 0 or 1 ; 0 indicates that stock price will decrease while 1 means increasing of stock price.
-- The app runs on local host.
-- To deploy it on the internt we have to deploy it to Heroku.
 
 ### Heroku
-We deploy our Streamlit app to [ Heroku.com](https://www.heroku.com/). In this way, we can share our app on the internet with others. 
+We deploy our Flask app to [ Heroku.com](https://www.heroku.com/). In this way, we can share our app on the internet with others. 
 We prepared the needed files to deploy our app sucessfully:
-- Procfile: contains run statements for app file and setup.sh.
-- setup.sh: contains setup information.
-- requirements.txt: contains the libraries must be downloaded by Heroku to run app file (stock_price_App_V1.py)  successfully 
-- stock_price_App_V1.py: contains the python code of a Streamlit web app.
-- stock_price_xg.pkl : contains our XGBClassifier model that built by modeling part.
-- X_train2.npy: contains the train data of modeling part that will be used to apply PCA trnsformation to the input data of the app.
+- Flask App.ipynb: contains run statements for app file.
+- Implementation.ipynb: contains Model implementation code from scratch.
+- Pipelining.ipynb: contains models pipelining code 
+- index.html: contains the html code for the web app.
+
 
 ### Flask 
-We also create our app   by using flask , then deployed it to Heroku . The files of this part are located into (Flask_deployment) folder. You can access the app by following this link : [stock-price-application-flask](https://stock-price-flask.herokuapp.com/)
+We have also created our app by using flask , then deployed it to Heroku . The Flask code can be found in Flask App Notebook. 
+
+## Team
+<center>
+
+### Collaborators
+
+- **Muhammad Hassan Naeem** &nbsp; <a href="https://github.com/hassannaeem53"><img title="Follow on GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a><a href="https://www.linkedin.com/in/hassan-naeem-357001192/"><img title="Follow on LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+
+- **Ahmed Farghally** &nbsp; </a><a href="https://github.com/AhmedFarghally"><img title="Follow on GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
+
+- **Shehryar Gondal** &nbsp; </a><a href="https://github.com/ShehryarGondal1"><img title="Follow on GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
+
+### Mentor
+- **Ayush Gupta** &nbsp;  </a><a href="https://github.com/hassannaeem53"><img title="Follow on GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
+</center>

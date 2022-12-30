@@ -1,6 +1,9 @@
 # Credit-Risk-Modeling-Bandora
 In this project we will be doing credit risk modelling of peer to peer lending Bondora systems.Data for the study has been retrieved from a publicly available data set of a leading European P2P lending platform (Bondora)..In P2P lending, loans are typically uncollateralized and lenders seek higher returns as a compensation for the financial risk they take. In addition, they need to make decisions under information asymmetry that works in favor of the borrowers. In order to make rational decisions, lenders want to minimize the risk of default of each lending decision, and realize the return that compensates for the risk. In this project we will preprocess the raw dataset and will create new preprocessed csv that can be used for building credit risk models.
 
+## About Project
+The Software Design Lifecycle Model, we used for out development is the basic waterfall model, project activities are broken down into linear sequential phases, meaning they are passed down onto each other, where each phase depends on the deliverables of the previous one and corresponds to a specialization of tasks. Following are some of the Major deliverables which were implemented and completed in sequential order. Each section corresponds to each phase/deliverable of the Project.
+
 ## Table on Contents
 - <a href='#understanding-the-dataset'>Understanding the Dataset</a>
 - <a href='#preprocessing'>Preprocessing</a>
@@ -20,7 +23,7 @@ The retrieved data is a pool of both defaulted and non-defaulted loans from the 
 
 - The dataset contains **112** features and **134529** records. 
 
-- The Target label of the dataset is whether the client is **defaulted** (labeled as **1**) or **Not Defaulted**
+- The Target label of the dataset is whether the client is **Defaulted** (labeled as **1**) or **Not Defaulted**
 (labeled as **0**) in his period.
 
 Dataset can be found: <a href="https://drive.google.com/u/0/uc?id=13_5F94nBgRLamAvkFRQg8pyfjcn1uPE4&export=download"> Here </a>

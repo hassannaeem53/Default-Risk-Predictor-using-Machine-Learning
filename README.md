@@ -4,6 +4,8 @@ In this project we will be doing credit risk modelling of peer to peer lending B
 ## About Project
 The Software Design Lifecycle Model, we used for out development is the basic waterfall model, project activities are broken down into linear sequential phases, meaning they are passed down onto each other, where each phase depends on the deliverables of the previous one and corresponds to a specialization of tasks. Following are some of the Major deliverables which were implemented and completed in sequential order. Each section corresponds to each phase/deliverable of the Project.
 
+To directly use pkl model files or demonstration video visit this <a href="https://drive.google.com/drive/folders/13cxcKpjePh85EQk_62Nwi8b5Sa31MqEM?usp=sharing">Link</a>
+
 ## Table on Contents
 - <a href='#understanding-the-dataset'>Understanding the Dataset</a>
 - <a href='#preprocessing'>Preprocessing</a>
@@ -218,23 +220,23 @@ Following Features were choosen for the deployment phase as they were observed t
 
 
 ## Deployment
-you can access our app by following this link [Risk Analysis](https://www.heroku.com/)
+you can access our working app models and demo video by following this link [Risk Analysis](https://drive.google.com/drive/folders/13cxcKpjePh85EQk_62Nwi8b5Sa31MqEM?usp=sharing)
 
 ### Application GUI
 ![image](https://user-images.githubusercontent.com/80200407/209480606-53f3603a-7735-40b4-92fa-f29baf7d9950.png)
 
 
-### Heroku
-We deploy our Flask app to [ Heroku.com](https://www.heroku.com/). In this way, we can share our app on the internet with others. 
+### Ngrok
+For deployment and testing our Flask app we used Ngrok. In this way, we can share our app on the internet with others. 
 We prepared the needed files to deploy our app sucessfully:
 - Flask App.ipynb: contains run statements for app file.
 - Implementation.ipynb: contains Model implementation code from scratch.
-- Pipelining.ipynb: contains models pipelining code 
+- Pipelining.ipynb: contains models pipelining code -> the output pkl files are then used in Flask App
 - index.html: contains the html code for the web app.
 
 
 ### Flask 
-We have also created our app by using flask , then deployed it to Heroku . The Flask code can be found in Flask App Notebook. 
+We have also created our app by using flask , then deployed it using Ngrok . The Flask code can be found in Flask App Notebook. 
 
 ## Team
 <center>
@@ -248,5 +250,5 @@ We have also created our app by using flask , then deployed it to Heroku . The F
 - **Shehryar Gondal** &nbsp; </a><a href="https://github.com/ShehryarGondal1"><img title="Follow on GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
 
 ### Mentor
-- **Ayush Gupta** &nbsp;  </a><a href="https://github.com/hassannaeem53"><img title="Follow on GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
+- **Ayush Gupta** 
 </center>
